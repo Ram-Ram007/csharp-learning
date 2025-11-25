@@ -199,7 +199,7 @@ This roadmap helps you go from **C# basics → intermediate → projects → job
 
 
 
-# Second Study Plan
+# Study Plan for a Week
 
 # 7-Day .NET Basics Study Plan
 
