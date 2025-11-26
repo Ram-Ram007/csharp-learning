@@ -1,206 +1,3 @@
-# C# / .NET Learning Repository
-
-This repository contains all my study notes, examples, exercises, and mini–projects while learning **C#** and **.NET Core**.  
-It is a personal learning log, but others can also use it as a quick reference for .NET basics.
-
----
-
-## 🚀 Goals
-- Understand .NET fundamentals  
-- Practice C# syntax, OOP, and advanced concepts  
-- Build small console applications and web apps  
-- Document everything I learn in a clean and organized way  
-
----
-
-
-# C# Learning Roadmap (Beginner → Advanced)
-
-This roadmap helps you go from **C# basics → intermediate → projects → job-ready**.
-
----
-
-## Phase 1: Strengthen Core C# (1–2 weeks)
-
-### Learn:
-- Variables & Data Types
-- Type conversions
-- Nullable types
-- if / else / switch
-- for, foreach, while loops
-- Methods & Functions
-- Method overloading
-
-### OOP Concepts:
-- Classes & Objects
-- Constructors
-- Inheritance
-- Polymorphism
-- Encapsulation
-- Abstraction
-- static vs non-static
-- Interfaces
-- Abstract classes
-
-**Outcome:**  
-✔ You can write clean object-oriented programs.
-
----
-
-## Phase 2: Collections & Data Handling (1 week)
-
-### Learn:
-- List<T>
-- Dictionary<T>
-- Arrays
-- Queue & Stack
-- LINQ basics (`Where`, `Select`, `OrderBy`)
-
-**Outcome:**  
-✔ You can filter, map, sort data efficiently.
-
----
-
-## Phase 3: Work With Files & Exceptions (3–4 days)
-
-### Learn:
-- File read/write
-- FileStream, StreamReader
-- try–catch–finally
-- Custom exceptions
-
-**Outcome:**  
-✔ You can handle files & errors smoothly.
-
----
-
-## Phase 4: Learn .NET Environment (1 week)
-
-### Understand:
-- CLR, CTS, CLS
-- What is .NET / .NET Core
-- JIT compiler
-- Garbage Collection
-
-### Tools to Learn:
-- Visual Studio / VS Code
-- `dotnet` CLI
-- Git & GitHub basics
-
-**Outcome:**  
-✔ You understand how .NET applications run.
-
----
-
-# Track A – .NET Full-Stack Developer
-
-## Phase 5: Learn ASP.NET Core MVC (2–3 weeks)
-
-### Learn:
-- MVC pattern
-- Controllers & Actions
-- Views (Razor)
-- Layout pages
-- Routing
-- Dependency Injection
-
-### Database:
-- Entity Framework Core
-- Migrations
-- CRUD operations
-- Authentication & Authorization
-
-**Outcome:**  
-✔ You can build complete web apps with a database.
-
----
-
-## Phase 6: Build 2 Major Projects (2–4 weeks)
-
-### Project Ideas:
-- Task Manager Web App (CRUD + Login)
-- Blog App
-- E-Commerce Backend
-- Notes App with Search and Tags
-
-**Outcome:**  
-✔ You become job-ready.
-
----
-
-# Track B – Backend / API Developer
-
-### Learn:
-- ASP.NET Core Web API
-- REST architecture
-- Swagger
-- DTOs
-- AutoMapper
-- JWT Authentication
-
-**Outcome:**  
-✔ You can build scalable backend APIs.
-
----
-
-# Track C – Desktop Developer (Optional)
-
-### Learn:
-- WPF
-- WinForms
-
----
-
-# Advanced Topics (Optional but Recommended)
-
-- async / await
-- Multithreading
-- Generics
-- Design Patterns
-- SOLID Principles
-- Microservices basics
-- Azure (Cloud) basics
-
----
-
-# Suggested Weekly Study Plan
-
-### Week 1:
-- OOP, methods, collections
-- Build 4–5 console apps
-
-### Week 2:
-- LINQ, files, exceptions
-- Build small projects (To-Do app, Calculator)
-
-### Week 3:
-- ASP.NET Core + MVC + Routing
-
-### Week 4:
-- Entity Framework Core + CRUD
-
-### Week 5–6:
-- Build one full project
-- Upload to GitHub
-
----
-
-# After Completing This Roadmap, You Can:
-- Build real .NET applications
-- Create full-stack web apps
-- Build API services
-- Write professional C# code
-- Crack beginner/intermediate interviews
-
-
-
-
-
-
-
-
-# Study Plan for a Week
-
 # 7-Day .NET Basics Study Plan
 
 ## Day 1: Introduction to .NET and C# Fundamentals
@@ -1301,4 +1098,522 @@ CLR Architecture:
 ┌─────────────────────────────────────┐
 │   CLR (Common Language Runtime)     │
 │   ┌───────────────────────────┐     │
-│   │  
+│   │  JIT Compiler             │     │
+│   │  Memory Manager           │     │
+│   │  Garbage Collector        │     │
+│   │  Security Manager         │     │
+│   └───────────────────────────┘     │
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
+┌─────────────────────────────────────┐
+│    Native Machine Code              │
+│    Executes on CPU                  │
+└─────────────────────────────────────┘
+
+Memory Layout:
+┌────────────────────┐
+│      Stack         │  ← Value types, method calls
+│  (Fast, Limited)   │     References to heap objects
+├────────────────────┤
+│                    │
+│       Heap         │  ← Reference types (objects)
+│  (Slower, Larger)  │     Managed by GC
+│                    │
+└────────────────────┘
+```
+
+### Practice Tasks
+1. Create a value type (struct) and reference type (class) with similar properties and observe the differences
+2. Implement IDisposable pattern in a custom class
+3. Use reflection to list all methods in a class
+4. Create nested namespaces and practice using statements
+
+### Daily Quiz
+1. What are the main responsibilities of the CLR?
+2. What's the difference between value types and reference types?
+3. Where are value types stored? Where are reference types stored?
+4. What is an assembly?
+5. What is the purpose of the GAC?
+6. What is boxing and unboxing?
+7. How does garbage collection work in .NET?
+
+### Coding Exercise
+**Memory Management Explorer**: Create a program that:
+- Demonstrates value type vs reference type behavior
+- Shows boxing and unboxing with performance timing
+- Implements IDisposable pattern for resource cleanup
+- Uses weak references to observe garbage collection
+
+### Revision Points
+- CLR manages code execution and provides services
+- IL is the intermediate code that CLR executes
+- Value types: stored on stack, contain actual data
+- Reference types: stored on heap, variables hold references
+- Assemblies are building blocks of .NET applications
+- Namespaces organize code logically
+- GC automatically manages heap memory
+- Use `using` statement or IDisposable for resource cleanup
+- Boxing has performance cost, avoid when possible
+
+---
+
+## Day 7: Building a Complete Console Application
+
+### Topics to Cover
+- File I/O operations
+- Working with JSON
+- Design patterns (basic)
+- Putting it all together
+- Best practices
+- Debugging basics
+
+### Detailed Explanations
+
+**File Operations:**
+.NET provides comprehensive classes for file and directory operations in the System.IO namespace.
+
+**JSON in .NET:**
+System.Text.Json provides high-performance JSON serialization and deserialization.
+
+**Best Practices:**
+- Use meaningful names
+- Keep methods small and focused
+- Handle exceptions appropriately
+- Use proper access modifiers
+- Comment complex logic
+- Follow naming conventions (PascalCase for classes/methods, camelCase for variables)
+
+### Code Examples
+
+```csharp
+// Example 1: File I/O Operations
+using System.IO;
+
+// Writing to a file
+string[] lines = { "Line 1", "Line 2", "Line 3" };
+File.WriteAllLines("output.txt", lines);
+
+// Reading from a file
+string content = File.ReadAllText("output.txt");
+Console.WriteLine(content);
+
+string[] readLines = File.ReadAllLines("output.txt");
+foreach (string line in readLines)
+{
+    Console.WriteLine(line);
+}
+
+// Appending to a file
+File.AppendAllText("output.txt", "\nNew line");
+
+// Check if file exists
+if (File.Exists("output.txt"))
+{
+    Console.WriteLine("File exists!");
+}
+
+// Directory operations
+Directory.CreateDirectory("MyFolder");
+string[] files = Directory.GetFiles(".", "*.txt");
+foreach (string file in files)
+{
+    Console.WriteLine(file);
+}
+
+// Example 2: Working with JSON
+using System.Text.Json;
+
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public string Email { get; set; }
+}
+
+// Serializing to JSON
+Person person = new Person 
+{ 
+    Name = "John Doe", 
+    Age = 30, 
+    Email = "john@example.com" 
+};
+
+string jsonString = JsonSerializer.Serialize(person);
+Console.WriteLine(jsonString);
+
+// Writing JSON to file
+File.WriteAllText("person.json", jsonString);
+
+// Deserializing from JSON
+string jsonFromFile = File.ReadAllText("person.json");
+Person deserializedPerson = JsonSerializer.Deserialize<Person>(jsonFromFile);
+Console.WriteLine($"{deserializedPerson.Name}, {deserializedPerson.Age}");
+
+// Example 3: Complete Task Manager Application
+public class Task
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public string Description { get; set; }
+    public bool IsCompleted { get; set; }
+    public DateTime CreatedDate { get; set; }
+    
+    public Task()
+    {
+        CreatedDate = DateTime.Now;
+    }
+}
+
+public class TaskManager
+{
+    private List<Task> tasks;
+    private const string FileName = "tasks.json";
+    private int nextId = 1;
+    
+    public TaskManager()
+    {
+        LoadTasks();
+    }
+    
+    private void LoadTasks()
+    {
+        if (File.Exists(FileName))
+        {
+            string json = File.ReadAllText(FileName);
+            tasks = JsonSerializer.Deserialize<List<Task>>(json) ?? new List<Task>();
+            nextId = tasks.Count > 0 ? tasks.Max(t => t.Id) + 1 : 1;
+        }
+        else
+        {
+            tasks = new List<Task>();
+        }
+    }
+    
+    private void SaveTasks()
+    {
+        string json = JsonSerializer.Serialize(tasks, new JsonSerializerOptions 
+        { 
+            WriteIndented = true 
+        });
+        File.WriteAllText(FileName, json);
+    }
+    
+    public void AddTask(string title, string description)
+    {
+        var task = new Task
+        {
+            Id = nextId++,
+            Title = title,
+            Description = description,
+            IsCompleted = false
+        };
+        
+        tasks.Add(task);
+        SaveTasks();
+        Console.WriteLine($"Task added successfully! ID: {task.Id}");
+    }
+    
+    public void ListTasks()
+    {
+        if (tasks.Count == 0)
+        {
+            Console.WriteLine("No tasks found.");
+            return;
+        }
+        
+        Console.WriteLine("\n=== Task List ===");
+        foreach (var task in tasks)
+        {
+            string status = task.IsCompleted ? "[✓]" : "[ ]";
+            Console.WriteLine($"{status} ID: {task.Id} - {task.Title}");
+            Console.WriteLine($"    {task.Description}");
+            Console.WriteLine($"    Created: {task.CreatedDate:yyyy-MM-dd}");
+            Console.WriteLine();
+        }
+    }
+    
+    public void CompleteTask(int id)
+    {
+        var task = tasks.FirstOrDefault(t => t.Id == id);
+        if (task != null)
+        {
+            task.IsCompleted = true;
+            SaveTasks();
+            Console.WriteLine($"Task {id} marked as completed!");
+        }
+        else
+        {
+            Console.WriteLine($"Task with ID {id} not found.");
+        }
+    }
+    
+    public void DeleteTask(int id)
+    {
+        var task = tasks.FirstOrDefault(t => t.Id == id);
+        if (task != null)
+        {
+            tasks.Remove(task);
+            SaveTasks();
+            Console.WriteLine($"Task {id} deleted!");
+        }
+        else
+        {
+            Console.WriteLine($"Task with ID {id} not found.");
+        }
+    }
+}
+
+// Main Program
+class Program
+{
+    static void Main(string[] args)
+    {
+        TaskManager taskManager = new TaskManager();
+        bool exit = false;
+        
+        Console.WriteLine("=== Task Manager Application ===\n");
+        
+        while (!exit)
+        {
+            Console.WriteLine("\n1. Add Task");
+            Console.WriteLine("2. List Tasks");
+            Console.WriteLine("3. Complete Task");
+            Console.WriteLine("4. Delete Task");
+            Console.WriteLine("5. Exit");
+            Console.Write("\nSelect an option: ");
+            
+            string choice = Console.ReadLine();
+            Console.WriteLine();
+            
+            try
+            {
+                switch (choice)
+                {
+                    case "1":
+                        Console.Write("Enter task title: ");
+                        string title = Console.ReadLine();
+                        Console.Write("Enter task description: ");
+                        string description = Console.ReadLine();
+                        taskManager.AddTask(title, description);
+                        break;
+                        
+                    case "2":
+                        taskManager.ListTasks();
+                        break;
+                        
+                    case "3":
+                        Console.Write("Enter task ID to complete: ");
+                        int completeId = int.Parse(Console.ReadLine());
+                        taskManager.CompleteTask(completeId);
+                        break;
+                        
+                    case "4":
+                        Console.Write("Enter task ID to delete: ");
+                        int deleteId = int.Parse(Console.ReadLine());
+                        taskManager.DeleteTask(deleteId);
+                        break;
+                        
+                    case "5":
+                        exit = true;
+                        Console.WriteLine("Goodbye!");
+                        break;
+                        
+                    default:
+                        Console.WriteLine("Invalid option. Please try again.");
+                        break;
+                }
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Error: Please enter a valid number.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+        }
+    }
+}
+
+// Example 4: Singleton Pattern
+public sealed class Logger
+{
+    private static Logger instance = null;
+    private static readonly object lockObj = new object();
+    private string logFilePath;
+    
+    private Logger()
+    {
+        logFilePath = "app.log";
+    }
+    
+    public static Logger Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                lock (lockObj)
+                {
+                    if (instance == null)
+                    {
+                        instance = new Logger();
+                    }
+                }
+            }
+            return instance;
+        }
+    }
+    
+    public void Log(string message)
+    {
+        string logEntry = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] {message}";
+        Console.WriteLine(logEntry);
+        File.AppendAllText(logFilePath, logEntry + Environment.NewLine);
+    }
+}
+
+// Usage
+Logger.Instance.Log("Application started");
+Logger.Instance.Log("Processing data");
+```
+
+### Practice Tasks
+1. Create a simple contact book that saves to JSON
+2. Build a note-taking application with file storage
+3. Implement a simple logging system
+4. Create a product inventory system with CRUD operations
+
+### Daily Quiz
+1. What namespace is used for file operations?
+2. How do you serialize an object to JSON?
+3. What's the difference between File.WriteAllText and File.AppendAllText?
+4. Why is the Singleton pattern useful?
+5. What's the purpose of the using statement with file streams?
+
+### Coding Exercise
+**Personal Budget Tracker**: Build a complete application that:
+- Stores expenses and income as JSON
+- Categories for transactions
+- Shows total balance
+- Filters transactions by date or category
+- Exports monthly reports to text file
+- Uses proper OOP principles and exception handling
+- Implements at least one design pattern
+
+### Revision Points
+- Use System.IO for file operations
+- System.Text.Json for JSON serialization
+- Always handle file exceptions (FileNotFoundException, IOException)
+- Close streams and files properly (use `using` statement)
+- Design patterns solve common problems
+- Keep concerns separated (data access, business logic, UI)
+- Test edge cases and error conditions
+
+---
+
+## Final Project Ideas
+
+Now that you've completed the 7-day study plan, here are comprehensive project ideas to practice:
+
+### 1. Library Management System
+**Features:**
+- Add, remove, search books
+- Member registration
+- Check-out and return books
+- Due date tracking
+- Late fee calculation
+- Data persistence with JSON
+
+**Concepts Used:** OOP, Collections, File I/O, Exception Handling
+
+### 2. Student Grade Management
+**Features:**
+- Add students and courses
+- Record grades for assignments/exams
+- Calculate GPA
+- Generate report cards
+- Export to file
+
+**Concepts Used:** Inheritance, Collections, LINQ, File I/O
+
+### 3. Banking Application
+**Features:**
+- Create accounts
+- Deposit and withdrawal
+- Transfer between accounts
+- Transaction history
+- Interest calculation
+- Account types (Savings, Checking)
+
+**Concepts Used:** OOP, Encapsulation, Exception Handling, Collections
+
+### 4. Inventory Management
+**Features:**
+- Product CRUD operations
+- Stock level tracking
+- Low stock alerts
+- Sales recording
+- Reports generation
+
+**Concepts Used:** Full OOP, File I/O, LINQ, Collections
+
+### 5. Simple Game (Text-Based Adventure)
+**Features:**
+- Player character with stats
+- Room navigation
+- Inventory system
+- Combat system
+- Save/load game state
+
+**Concepts Used:** OOP, Collections, File I/O, Game loop
+
+---
+
+## Additional Learning Resources
+
+### Official Documentation
+- Microsoft .NET Documentation: https://docs.microsoft.com/dotnet
+- C# Programming Guide: https://docs.microsoft.com/dotnet/csharp
+
+### Practice Platforms
+- HackerRank
+- LeetCode
+- Codewars
+- Exercism.io
+
+### Next Steps
+After completing this 7-day plan:
+1. Learn about ASP.NET Core for web development
+2. Explore Entity Framework Core for database operations
+3. Study unit testing with xUnit or NUnit
+4. Learn about async/await and parallel programming
+5. Explore design patterns in depth
+6. Build real-world projects
+
+---
+
+## Tips for Success
+
+1. **Code Every Day**: Practice is essential. Even 30 minutes daily is better than cramming
+2. **Type Code Yourself**: Don't copy-paste. Typing helps muscle memory
+3. **Experiment**: Modify examples to see what happens
+4. **Debug**: When errors occur, read error messages carefully
+5. **Build Projects**: Apply what you learn in practical projects
+6. **Ask Questions**: Join .NET communities on Reddit, Stack Overflow, Discord
+7. **Review Regularly**: Revisit earlier concepts to reinforce learning
+8. **Take Breaks**: Your brain needs time to process information
+
+---
+
+## Daily Schedule Suggestion
+
+- **Morning (1-2 hours)**: Study new concepts, read explanations
+- **Afternoon (1 hour)**: Work through code examples
+- **Evening (1-2 hours)**: Complete practice tasks and coding exercises
+- **Before Bed (15-30 min)**: Review quiz questions and revision points
+
+Remember: Everyone learns at their own pace. If you need more time on a particular day, that's perfectly fine. The goal is understanding, not speed.
+
+Good luck with your .NET learning journey! 🚀
